@@ -1,0 +1,298 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="logo/logologo.ico" type="image/png">
+  <title>Sinta Colete Modeladora</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fffaf5;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff6a00, #ff0080);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .pulsando {
+      font-size: 1.8rem;
+      font-weight: bold;
+      animation: pulsar 1.5s infinite;
+    }
+
+    @keyframes pulsar {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .carrossel {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto 2rem;
+      overflow: hidden;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .carrossel img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      opacity: 0;
+      transition: all 0.6s ease;
+    }
+
+    .carrossel img.ativo {
+      left: 0;
+      opacity: 1;
+    }
+
+    .seta {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0 10px;
+      z-index: 10;
+    }
+
+    .seta.esquerda {
+      left: 0;
+    }
+
+    .seta.direita {
+      right: 0;
+    }
+
+    .descricao {
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .botao-comprar {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #39ff14;
+      color: rgb(0, 0, 0);
+      font-weight: bold;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      animation: pulsar 1.5s infinite;
+      z-index: 100;
+    }
+
+    .botao-menu {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #00f2ff, #7d2ae8);
+      color: white;
+      font-size: 1rem;
+      font-weight: bold;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-family: 'Segoe UI Rounded', sans-serif;
+      box-shadow: 0 0 15px rgba(125, 42, 232, 0.5);
+      z-index: 100;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: bounce 2s infinite;
+    }
+
+    .botao-menu:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(125, 42, 232, 0.8);
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="../index.html">
+    <button class="botao-menu">🏠 Menu Principal</button>
+  </a>
+
+  <header>
+    <h1>Sinta Colete Modeladora</h1>
+    <p class="pulsando">🚚📦 PAGA APENAS NA ENTREGA! 📦🚚</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Primeiro carrossel -->
+    <div class="carrossel" id="carrossel1">
+      <button class="seta esquerda" onclick="voltar(1)">❮</button>
+      <img class="ativo" src="sintamodeladora/Tabela de medidas.jpeg" alt="Imagem 1">
+      <img src="sintamodeladora/01.jpg" alt="Imagem 2">
+      <img src="sintamodeladora/02.webp" alt="Imagem 3">
+      <img src="sintamodeladora/03.jpg" alt="Imagem 4">
+      <img src="sintamodeladora/04.png" alt="Imagem 5">
+      <button class="seta direita" onclick="avancar(1)">❯</button>
+    </div>
+
+    <div class="descricao">
+      <h2 style="font-size: 1.8rem; color: #ff0080; margin-bottom: 1rem;">
+        🔥 Transforme Seu Corpo em Minutos — E Sua Autoestima Pra Sempre!
+      </h2>
+      <p style="font-size: 1.1rem; line-height: 1.6; max-width: 700px; margin: 0 auto;">
+        Chega de roupas apertadas marcando, desconforto e insegurança no espelho.
+        A <strong>Sinta Colete Modeladora</strong> foi feita pra você que quer realçar suas curvas,
+        definir a cintura e se sentir PODEROSA desde o primeiro uso!
+      </p>
+      <ul style="list-style: none; padding: 0; margin: 1.5rem 0; font-size: 1.1rem;">
+        <li>✨ <strong>Reduz medidas instantaneamente</strong></li>
+        <li>💪 <strong>Suporte e postura alinhada o dia todo</strong></li>
+        <li>👗 <strong>Perfeita para usar por baixo de qualquer roupa</strong></li>
+      </ul>
+      <p style="font-size: 1.1rem; color: #d80000; font-weight: bold;">
+        🚨 Estoque limitado! As unidades estão esgotando rápido devido à alta demanda.
+      </p>
+      <p style="font-size: 1.1rem; font-weight: bold;">
+        💥 Garanta agora a sua e sinta a diferença no seu corpo e autoestima desde o primeiro minuto!
+      </p>
+    </div>
+
+    <!-- Segundo carrossel -->
+    <div class="carrossel" id="carrossel2">
+      <button class="seta esquerda" onclick="voltar(2)">❮</button>
+      <img class="ativo" src="sintamodeladora/001.jpeg" alt="Imagem 1">
+      <img src="sintamodeladora/002.jpeg" alt="Imagem 2">
+      <img src="sintamodeladora/003.png" alt="Imagem 3">
+      <img src="sintamodeladora/004.png" alt="Imagem 4">
+      <img src="sintamodeladora/005.png" alt="Imagem 5">
+      <button class="seta direita" onclick="avancar(2)">❯</button>
+    </div>
+
+    <div class="descricao">
+      <h2 style="font-size: 1.6rem; color: #ffbb00; margin-bottom: 1rem;">
+        ✅ Chegou sua chance!
+      </h2>
+      <p style="font-size: 1.1rem; line-height: 1.6; max-width: 700px; margin: 0 auto;">
+        Milhares de pessoas já garantiram a transformação que você está buscando.  
+        Agora é a sua vez de dar esse passo!  
+      </p>
+      <p style="font-size: 1.1rem; color: #e90389; font-weight: bold; margin-top: 1rem;">
+        🕒 Clique agora no botão abaixo antes que acabe o estoque!
+      </p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <a href="https://entrega.logzz.com.br/pay/memywvnq5/jzsmo-1-unidade" target="_blank">
+          <button style="background-color: #39ff14; color: #000; font-weight: bold; padding: 1rem 2rem; font-size: 1.3rem; border: none; border-radius: 50px; cursor: pointer; animation: pulsar 1.5s infinite; box-shadow: 0 0 15px #39ff14;">
+            COMPRAR AGORA
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Contato -->
+    <section id="contato" class="categoria categoria-contato">
+      <h2>Contatos</h2>
+      <p class="descricao">
+        📧 Email: contato@achadosonline.com
+        Siga-nos nas redes sociais:
+      </p>
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://www.instagram.com/achadoonline.br/" target="_blank" style="margin: 0 10px;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="30" height="30">
+        </a>
+        <a href="www.facebook.com/achadoonline.100" target="_blank" style="margin: 0 10px;">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="30" height="30">
+        </a>
+      </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+      <p>&copy; 2025 Achados Online. Todos os direitos reservados.</p>
+    </footer>
+
+  </div>
+
+  <a href="https://entrega.logzz.com.br/pay/memywvnq5/jzsmo-1-unidade" target="_blank">
+    <button class="botao-comprar">COMPRAR AGORA</button>
+  </a>
+
+  <script>
+    const carrossel1 = document.querySelectorAll("#carrossel1 img");
+    const carrossel2 = document.querySelectorAll("#carrossel2 img");
+
+    let atual1 = 0;
+    let atual2 = 0;
+
+    function mostrarImagem(carrossel, imagens, index) {
+      imagens.forEach((img, i) => {
+        img.classList.remove("ativo");
+        if (i === index) {
+          img.classList.add("ativo");
+        }
+      });
+    }
+
+    function avancar(numero) {
+      if (numero === 1) {
+        atual1 = (atual1 + 1) % carrossel1.length;
+        mostrarImagem(1, carrossel1, atual1);
+      } else {
+        atual2 = (atual2 + 1) % carrossel2.length;
+        mostrarImagem(2, carrossel2, atual2);
+      }
+    }
+
+    function voltar(numero) {
+      if (numero === 1) {
+        atual1 = (atual1 - 1 + carrossel1.length) % carrossel1.length;
+        mostrarImagem(1, carrossel1, atual1);
+      } else {
+        atual2 = (atual2 - 1 + carrossel2.length) % carrossel2.length;
+        mostrarImagem(2, carrossel2, atual2);
+      }
+    }
+
+    setInterval(() => avancar(1), 4000);
+    setInterval(() => avancar(2), 5000);
+  </script>
+
+</body>
+</html>
